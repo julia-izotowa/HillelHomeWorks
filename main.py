@@ -28,7 +28,7 @@ def get_profit() -> float:
             FROM invoice_items
     '''
     cursor.execute(query)
-    return cursor.fetchall()[0]
+    return cursor.fetchall()
 
 
 if __name__ == '__main__':
@@ -41,4 +41,5 @@ if __name__ == '__main__':
         print(*name)
 
     # Получить прибыль
-    print("\nПрибыль составила: ", *get_profit())
+    profit = get_profit()
+    print("\nПрибыль составила: ", *profit[0])
