@@ -21,7 +21,7 @@ def get_unique_first_names() -> List:
     return cursor.fetchall()
 
 
-def get_profit() -> float:
+def get_profit() -> List:
     cursor = connect_to_db()
     query = '''
         SELECT SUM(UnitPrice * Quantity) 
